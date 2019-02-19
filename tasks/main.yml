@@ -1,0 +1,31 @@
+---
+- block:
+
+  - name: Create scripts directory
+    file:
+      path: "{{ cron_scripts_dir }}"
+      state: directory
+      mode: 0700
+
+  - name: Copy script(s) to {{ cron_scripts_dir }}
+    copy:
+      mode: 0700
+      content: "{{ item.value.content  }}"
+      dest: "{{ cron_scripts_dir }}/{{ item.key }}"
+    with_dict: "{{ cron_scripts_map }}"
+
+  - name: Add cron job(s)
+    cron:
+      user: "{{ item.value.user | default('root') }}"
+      name: "{{ item.key }}"
+      job: "{{ cron_scripts_dir }}/{{ item.key }} {{ item.value.arg | default('') }}"
+      minute: "{{ item.value.minute | default('*') }}"
+      hour: "{{ item.value.hour | default('*') }}"
+      day: "{{ item.value.day | default('*') }}"
+      month: "{{ item.value.month | default('*') }}"
+      weekday: "{{ item.value.weekday | default('*') }}"
+      state: present
+    with_dict: "{{ cron_scripts_map }}"
+
+  when: cron_scripts_map is defined
+  tags: cron

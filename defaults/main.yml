@@ -1,0 +1,21 @@
+cron_scripts_dir: /etc/scripts
+
+#cron_scripts_map:
+#  first-example-script-name.sh:
+#    content: |
+#      #!/bin/bash
+#      echo "Hello from cron!"
+#    minute: "0"
+#    hour: "1"
+
+#  second-example-script-name.sh:
+#    content: |
+#      #!/bin/bash
+#      echo "This script was launched at $(date '+%H:%M:%S on %D')"
+#    arg: "> /dev/null 2>&1"
+#    user: root
+#    minute: "5,10"
+#    hour: "*/2"
+#    day: "1-7"
+#    month: "1,6,12"
+#    weekday: "0,3"
