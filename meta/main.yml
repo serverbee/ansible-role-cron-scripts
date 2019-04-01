@@ -1,0 +1,19 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  role_name: cron-scripts
+  author: mr-yaky
+  description: Role to configure cron jobs.
+  company: "ServerBee, SL"
+  license: "license GPLv3"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 7
+  galaxy_tags:
+    - cron
+    - crontab
+    - bash
