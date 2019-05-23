@@ -21,6 +21,7 @@ Also you can simply add your script with all it own content directly to group_va
 * `cron_scripts_map.key.day`: [optional, default `*`]: Day of the month the job should run (e.g. `1-31`, `*`, `*/2`, etc )
 * `cron_scripts_map.key.month`: [optional, default `*`]: Month of the year the job should run (e.g. `1-12`, `*`, `*/2`, etc )
 * `cron_scripts_map.key.weekday`: [optional, default `*`]: Day of the week that the job should run (e.g. `0-6` for Sunday-Saturday, `*`, etc )
+* `cron_scripts_map.key.disabled`: [optional, default `no`]: If the job should be disabled (commented out) in the crontab
 
 ## Dependencies
 

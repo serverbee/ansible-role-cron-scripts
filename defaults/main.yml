@@ -19,3 +19,4 @@ cron_scripts_dir: /etc/scripts
 #    day: "1-7"
 #    month: "1,6,12"
 #    weekday: "0,3"
+#    disabled: "yes"
